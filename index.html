@@ -12,7 +12,7 @@
    Palette from the theatre painting: curtain reds, candle gold, white only for snow and the presenter line. Single dark theme by design.
    Texture: a fixed film-grain layer over the whole page. */
 :root{
-  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#4a2a2c; --forest:#0f3a2c;
+  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#4a2a2c; --forest:#12330a;
   --gold:#e2a95b; --gold-hi:#f6d58f;
   --text:#f4ece4; --body-text:#dccdc4; --muted:#bfa8a1; --snow:#ffffff;
   --display:'Marcellus','Optima','Palatino Linotype',Georgia,serif;
@@ -27,22 +27,22 @@ p{margin:0}
 .wrap{max-width:680px;margin:0 auto}
 
 /* grain over everything; clicks pass straight through */
-body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.22;
+body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* slow deep-green glow behind the content; script drifts it at a fraction of scroll speed */
 .aurora{position:fixed;left:0;right:0;top:-20vh;height:150vh;z-index:-1;pointer-events:none;will-change:transform;
-  background:radial-gradient(ellipse 60% 38% at 88% 22%,rgba(22,86,64,.55),transparent 70%),
-             radial-gradient(ellipse 55% 36% at 6% 62%,rgba(16,70,52,.5),transparent 70%),
-             radial-gradient(ellipse 50% 30% at 80% 92%,rgba(22,86,64,.4),transparent 70%)}
+  background:radial-gradient(ellipse 55% 36% at 108% 24%,rgba(18,51,10,.95),transparent 72%),
+             radial-gradient(ellipse 55% 36% at -8% 74%,rgba(18,51,10,.9),transparent 72%)}
 
-/* hero: harlequin curtain, vignetted, with a soft scrim behind the title */
+/* hero: harlequin curtain at half strength, vignetted, with a soft scrim behind the title */
 .hero{position:relative;overflow:hidden;
   margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) calc(-1 * max(16px,env(safe-area-inset-right,0px)));
   padding:44px 16px 44px;display:flex;justify-content:center;background-color:var(--curtain);
+  box-shadow:inset 0 0 110px 20px rgba(23,8,14,.75)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='160' viewBox='0 0 100 160'%3E%3Cdefs%3E%3CradialGradient id='p' cx='50%25' cy='48%25' r='62%25'%3E%3Cstop offset='0' stop-color='%238a2b3f'/%3E%3Cstop offset='.55' stop-color='%236a1d30'/%3E%3Cstop offset='1' stop-color='%233a0f1b'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100' height='160' fill='%232a0b14'/%3E%3Cpath d='M50 0 L100 80 L50 160 L0 80 Z' fill='url(%23p)'/%3E%3Cpath d='M50 0 L100 80 L50 160 L0 80 Z' fill='none' stroke='%23140509' stroke-width='3'/%3E%3Cpath d='M50 3 L97 80 L50 157 L3 80 Z' fill='none' stroke='%23c9626f' stroke-opacity='.28' stroke-width='1.2'/%3E%3Cg fill='%23140509'%3E%3Ccircle cx='50' cy='0' r='3.2'/%3E%3Ccircle cx='50' cy='160' r='3.2'/%3E%3Ccircle cx='0' cy='80' r='3.2'/%3E%3Ccircle cx='100' cy='80' r='3.2'/%3E%3C/g%3E%3C/svg%3E");
   background-size:100px 160px;background-position:center top}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(23,8,14,.0) 30%,rgba(23,8,14,.65) 100%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .hero-text::before{content:"";position:absolute;inset:-26px -60px;z-index:-1;background:radial-gradient(ellipse at center,rgba(23,8,14,.82) 0%,rgba(23,8,14,.6) 45%,transparent 72%)}
 .hero-text{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
@@ -68,8 +68,11 @@ body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;o
 main{display:flex;flex-direction:column;gap:80px;padding-top:76px;padding-bottom:96px}
 .cta{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
 .btn{display:inline-block;background:var(--gold-hi);color:#1a0a10;text-decoration:none;font-weight:600;font-size:18px;letter-spacing:.04em;
-  padding:15px 40px;border-radius:999px;transition:background .15s,transform .15s}
-.btn:hover{background:#ffe3a8;transform:translateY(-1px)}
+  padding:15px 40px;border-radius:999px;transition:background .2s,transform .2s,box-shadow .2s}
+.btn::after{content:"\2192";display:inline-block;max-width:0;margin-left:0;opacity:0;overflow:hidden;vertical-align:bottom;transition:max-width .2s,margin-left .2s,opacity .2s}
+.btn:hover,.btn:focus-visible{background:#fff;transform:translateY(-3px) scale(1.06);box-shadow:0 12px 26px rgba(0,0,0,.5)}
+.btn:hover::after,.btn:focus-visible::after{max-width:1.4em;margin-left:10px;opacity:1}
+.btn:active{transform:translateY(0) scale(.98);box-shadow:none;transition-duration:.05s}
 .btn:focus-visible,a:focus-visible{outline:3px solid var(--gold-hi);outline-offset:4px}
 .small{font-size:var(--s-sm);color:var(--muted)}
 h2{font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 14px;color:var(--gold);text-wrap:balance}
@@ -149,7 +152,7 @@ footer{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) calc(-1 
   </section>
 
   <section>
-    <h2>How it works</h2>
+    <h2>How this works</h2>
     <ol>
       <li><span class="when">By Nov 18</span><span>Send one request per household. Tell us which dancer you are coming to see, which nights work, and how many seats you need.</span></li>
       <li><span class="when">By Nov 23</span><span>We email every requester with confirmed tickets, or let you know we couldn't find room.</span></li>
@@ -158,8 +161,8 @@ footer{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) calc(-1 
   </section>
 
   <section>
-    <h2>Plans changed?</h2>
-    <p>After you submit, you get an email copy of your request with a link to edit it. If you lose it, send the form again and note the change in the last question.</p>
+    <h2>If my plans change?</h2>
+    <p>After you submit, you get an email copy of your request with a link to edit it.</p>
   </section>
 </main>
 </div>
