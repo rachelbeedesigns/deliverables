@@ -12,7 +12,7 @@
    Palette from the theatre painting: curtain reds, candle gold, white only for snow and the presenter line. Single dark theme by design.
    Texture: a fixed film-grain layer over the whole page. */
 :root{
-  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#4a2a2c; --forest:#0e2806;
+  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#4a2a2c;
   --gold:#e2a95b; --gold-hi:#f6d58f;
   --text:#f4ece4; --body-text:#dccdc4; --muted:#bfa8a1; --snow:#ffffff;
   --display:'Marcellus','Optima','Palatino Linotype',Georgia,serif;
@@ -30,10 +30,9 @@ p{margin:0}
 body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.06;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.4 -0.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* slow deep-green glow behind the content; script drifts it at a fraction of scroll speed */
-.aurora{position:fixed;left:0;right:0;top:-20vh;height:150vh;z-index:-1;pointer-events:none;will-change:transform;
-  background:radial-gradient(ellipse 85% 56% at 108% 24%,rgba(14,40,6,1),transparent 75%),
-             radial-gradient(ellipse 85% 56% at -8% 74%,rgba(14,40,6,1),transparent 75%)}
+/* one wide, dark-red glow rising from the bottom of the page; script drifts it at a fraction of scroll speed */
+.aurora{position:fixed;left:0;right:0;top:0;height:140vh;z-index:-1;pointer-events:none;will-change:transform;
+  background:radial-gradient(ellipse 110% 48% at 50% 80%,rgba(58,15,27,.92),transparent 75%)}
 
 /* hero: harlequin curtain at half strength, vignetted, with a soft scrim behind the title */
 .hero{position:relative;overflow:hidden;
