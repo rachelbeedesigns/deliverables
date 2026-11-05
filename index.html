@@ -12,7 +12,7 @@
    Palette from the theatre painting: curtain reds, candle gold, white only for snow and the presenter line. Single dark theme by design.
    Texture: a fixed film-grain layer over the whole page. */
 :root{
-  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#4a2a2c; --forest:#12330a;
+  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#4a2a2c; --forest:#0e2806;
   --gold:#e2a95b; --gold-hi:#f6d58f;
   --text:#f4ece4; --body-text:#dccdc4; --muted:#bfa8a1; --snow:#ffffff;
   --display:'Marcellus','Optima','Palatino Linotype',Georgia,serif;
@@ -32,8 +32,8 @@ body::before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;o
 
 /* slow deep-green glow behind the content; script drifts it at a fraction of scroll speed */
 .aurora{position:fixed;left:0;right:0;top:-20vh;height:150vh;z-index:-1;pointer-events:none;will-change:transform;
-  background:radial-gradient(ellipse 55% 36% at 108% 24%,rgba(18,51,10,.95),transparent 72%),
-             radial-gradient(ellipse 55% 36% at -8% 74%,rgba(18,51,10,.9),transparent 72%)}
+  background:radial-gradient(ellipse 85% 56% at 108% 24%,rgba(14,40,6,1),transparent 75%),
+             radial-gradient(ellipse 85% 56% at -8% 74%,rgba(14,40,6,1),transparent 75%)}
 
 /* hero: harlequin curtain at half strength, vignetted, with a soft scrim behind the title */
 .hero{position:relative;overflow:hidden;
@@ -138,7 +138,7 @@ footer{margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) calc(-1 
 
   <section class="panel lead">
     <p>TBT's Adult Ballet Nutcracker is free, and we'd love to see you there.</p>
-    <p>The studio holds 100 seats for the guests of more than 40 dancers, so we can't promise everyone a seat. The form is a request, not a ticket. We'll email everyone by November 23 with confirmed tickets.</p>
+    <p>The studio has 100 seats to share among the guests of our more than 40 dancers. We can't promise everyone a seat, but we'll do our best to make room for as many people as we can. The form is a request rather than a ticket, and we'll email everyone by November 23 with confirmed tickets.</p>
   </section>
 
   <section>
