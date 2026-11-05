@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Request free seats to the TBT Richardson School Adult Ballet Nutcracker, December 10-11 at Bruce Wood Dance Gallery.">
+<title>Nutcracker Seat Requests</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;600&display=swap">
+<style>
+/* Layout: tufted burgundy hero with a dark title panel and countdown, then dark panels with gold hairlines.
+   Type: Marcellus for display, Inter for everything else. Sizes: 14 / 17 / 22 plus hero and countdown numerals.
+   Palette from the theatre painting: curtain reds, candle gold, tree green, white only for snow. Single dark theme by design. */
+:root{
+  --bg:#17080e; --panel:#250c15; --curtain:#4a1626; --curtain-hi:#7a2538; --line:#6b3a35;
+  --gold:#e2a95b; --gold-hi:#f6d58f; --green:#7fb3a2; --green-deep:#2f5d4f;
+  --text:#f4ece4; --muted:#cdb5ae; --snow:#ffffff;
+  --display:'Marcellus','Optima','Palatino Linotype',Georgia,serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --s-sm:14px; --s-md:17px; --s-lg:22px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:var(--s-md);line-height:1.6;
+  padding-block:0 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+p{margin:0}
+.wrap{max-width:680px;margin:0 auto}
+
+/* tufted hero */
+.hero{position:relative;overflow:hidden;
+  margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px))) calc(-1 * max(16px,env(safe-area-inset-right,0px)));
+  padding:20px 16px 36px;display:flex;justify-content:center;background-color:var(--curtain);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='160' viewBox='0 0 100 160'%3E%3Cdefs%3E%3CradialGradient id='p' cx='50%25' cy='48%25' r='62%25'%3E%3Cstop offset='0' stop-color='%238a2b3f'/%3E%3Cstop offset='.55' stop-color='%236a1d30'/%3E%3Cstop offset='1' stop-color='%233a0f1b'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='100' height='160' fill='%232a0b14'/%3E%3Cpath d='M50 0 L100 80 L50 160 L0 80 Z' fill='url(%23p)'/%3E%3Cpath d='M50 0 L100 80 L50 160 L0 80 Z' fill='none' stroke='%23140509' stroke-width='3'/%3E%3Cpath d='M50 3 L97 80 L50 157 L3 80 Z' fill='none' stroke='%23c9626f' stroke-opacity='.28' stroke-width='1.2'/%3E%3Cg fill='%23140509'%3E%3Ccircle cx='50' cy='0' r='3.2'/%3E%3Ccircle cx='50' cy='160' r='3.2'/%3E%3Ccircle cx='0' cy='80' r='3.2'/%3E%3Ccircle cx='100' cy='80' r='3.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:100px 160px;background-position:center top}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,rgba(23,8,14,.0) 30%,rgba(23,8,14,.65) 100%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.gem{position:relative;width:min(100%,580px);filter:drop-shadow(0 10px 24px rgba(0,0,0,.6))}
+.gem::before,.gem::after{content:"";position:absolute;clip-path:polygon(7% 0,93% 0,100% 50%,93% 100%,7% 100%,0 50%)}
+.gem::before{inset:0;background:linear-gradient(160deg,var(--gold-hi),var(--gold) 45%,#8e5f2a)}
+.gem::after{inset:3px;background:radial-gradient(circle at 50% 40%,#2b0e18,#14060b 75%)}
+.gem-text{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:18px 9% 20px;gap:4px}
+.label{font-size:var(--s-sm);letter-spacing:.14em;text-transform:uppercase;color:var(--green);font-weight:600;line-height:1.35}
+.gem h1{font-family:var(--display);font-weight:400;margin:0;line-height:1.05;color:var(--gold-hi);text-transform:uppercase;
+  font-size:clamp(26px,6.4vw,42px);letter-spacing:.05em}
+.dates{font-family:var(--display);font-size:var(--s-lg);color:var(--text)}
+
+/* snow */
+.snow{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.snow i{position:absolute;top:-10px;width:5px;height:5px;border-radius:50%;background:var(--snow);opacity:.75;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(300px) translateX(24px)}}
+@media (prefers-reduced-motion:reduce){.snow{display:none}}
+
+/* countdown */
+.count{margin-top:-16px;position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px}
+.units{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:420px}
+.unit{background:var(--panel);border:1px solid var(--gold);padding:10px 4px 8px;text-align:center}
+.unit b{display:block;font-family:var(--display);font-weight:400;font-size:32px;line-height:1.1;color:var(--gold-hi);font-variant-numeric:tabular-nums}
+.unit span{font-size:var(--s-sm);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.count p{font-size:var(--s-sm);color:var(--muted)}
+
+/* content */
+main{display:flex;flex-direction:column;gap:34px;padding-top:28px}
+.cta{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.close{font-family:var(--display);font-size:var(--s-lg);color:var(--gold-hi)}
+.btn{display:inline-block;background:var(--curtain-hi);color:var(--text);text-decoration:none;font-weight:600;font-size:var(--s-md);letter-spacing:.04em;
+  padding:16px 36px;border:2px solid var(--gold);border-radius:2px;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--line)}
+.btn:hover{background:#923049}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold-hi);outline-offset:4px}
+.small{font-size:var(--s-sm);color:var(--muted)}
+h2{font-family:var(--display);font-weight:400;font-size:var(--s-lg);margin:0 0 12px;color:var(--gold-hi);text-wrap:balance;display:flex;align-items:center;gap:14px}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--green-deep),transparent)}
+.panel{background:var(--panel);border:1px solid var(--line);padding:22px 24px}
+.panel p+p{margin-top:10px}
+.place b{font-family:var(--display);font-weight:400;font-size:var(--s-lg);display:block;color:var(--text)}
+a{color:var(--green)}
+ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px}
+li{display:grid;grid-template-columns:8em 1fr;gap:14px}
+.when{font-family:var(--display);color:var(--gold);font-size:var(--s-md)}
+@media (max-width:460px){li{grid-template-columns:1fr;gap:2px}.panel{padding:18px}.unit b{font-size:26px}}
+</style>
+<style>html{background:#17080e}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="snow" aria-hidden="true">
+    <i style="left:6%;animation-duration:9s;animation-delay:-2s"></i><i style="left:14%;animation-duration:12s;animation-delay:-7s"></i>
+    <i style="left:23%;animation-duration:10s;animation-delay:-4s"></i><i style="left:33%;animation-duration:13s;animation-delay:-9s"></i>
+    <i style="left:44%;animation-duration:8s;animation-delay:-1s"></i><i style="left:56%;animation-duration:11s;animation-delay:-6s"></i>
+    <i style="left:66%;animation-duration:9.5s;animation-delay:-3s"></i><i style="left:77%;animation-duration:12.5s;animation-delay:-8s"></i>
+    <i style="left:86%;animation-duration:10.5s;animation-delay:-5s"></i><i style="left:94%;animation-duration:8.5s;animation-delay:-10s"></i>
+  </div>
+  <div class="gem">
+    <div class="gem-text">
+      <p class="label">TBT Richardson School Adult Ballet presents</p>
+      <h1>The Nutcracker</h1>
+      <p class="dates">December 10 &amp; 11</p>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="count" aria-label="Countdown to opening night">
+    <div class="units" id="units">
+      <div class="unit"><b id="d">–</b><span>Days</span></div>
+      <div class="unit"><b id="h">–</b><span>Hours</span></div>
+      <div class="unit"><b id="m">–</b><span>Min</span></div>
+      <div class="unit"><b id="s">–</b><span>Sec</span></div>
+    </div>
+    <p id="count-note">until opening night, Thursday, December 10</p>
+  </section>
+
+<main>
+  <section class="cta">
+    <p class="close">Requests close Wednesday, November 18</p>
+    <a class="btn" href="https://forms.gle/2exqrENJfYYdXDqU6" target="_blank" rel="noopener">Request seats</a>
+    <p class="small">Opens a short form in a new tab. It takes about two minutes.</p>
+  </section>
+
+  <section class="panel">
+    <p>TBT's Adult Ballet Nutcracker is free, and we'd love to see you there.</p>
+    <p>The studio holds 100 seats per night, shared among more than 40 dancers and their guests, so we can't promise everyone a seat. The form is a request, not a ticket. We'll email everyone by November 23 with confirmed tickets.</p>
+    <p>If you can attend either night, tell us. It makes it easier to find room for everyone.</p>
+  </section>
+
+  <section>
+    <h2>Where and when</h2>
+    <div class="panel place">
+      <b>Bruce Wood Dance Gallery</b>
+      <p>101 Howell Street, Dallas, Texas 75207</p>
+      <p>Thursday, December 10, and Friday, December 11</p>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=101+Howell+Street+Dallas+TX+75207" target="_blank" rel="noopener">Open in Maps</a></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <ol>
+      <li><span class="when">By Nov 18</span><span>Send one request per household. Tell us which dancer you are coming to see, which nights work, and how many seats you need.</span></li>
+      <li><span class="when">By Nov 23</span><span>We email every requester with confirmed tickets, or let you know we couldn't find room.</span></li>
+      <li><span class="when">After that</span><span>Reply to confirm. Seats that aren't confirmed go to the waitlist.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Plans changed?</h2>
+    <p>After you submit, you get an email copy of your request with a link to edit it. If you lose it, send the form again and note the change in the last question.</p>
+  </section>
+</main>
+</div>
+<script>
+(function(){
+  var target=new Date("2026-12-10T00:00:00-06:00").getTime(); // opening night, midnight Central (show time not set)
+  var end=new Date("2026-12-12T00:00:00-06:00").getTime();
+  var ids={d:document.getElementById("d"),h:document.getElementById("h"),m:document.getElementById("m"),s:document.getElementById("s")};
+  var note=document.getElementById("count-note");
+  function pad(n){return n<10?"0"+n:""+n}
+  function tick(){
+    var now=Date.now(),diff=target-now;
+    if(diff<=0){
+      ids.d.textContent=ids.h.textContent=ids.m.textContent=ids.s.textContent="00";
+      note.textContent=now<end?"The Nutcracker is on. See you at the Dance Gallery.":"Thank you for coming to our Nutcracker.";
+      return;
+    }
+    var t=Math.floor(diff/1000);
+    ids.d.textContent=Math.floor(t/86400);
+    ids.h.textContent=pad(Math.floor(t%86400/3600));
+    ids.m.textContent=pad(Math.floor(t%3600/60));
+    ids.s.textContent=pad(t%60);
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+
+</body>
+</html>
